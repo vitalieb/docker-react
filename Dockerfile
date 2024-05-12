@@ -8,5 +8,6 @@ RUN npm run build
 # all the output will be generated in the /app/build because /app is the working dir
 
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # no RUN required - as the nginx image default command is enough
